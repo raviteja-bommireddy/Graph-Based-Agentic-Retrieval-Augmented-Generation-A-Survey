@@ -1,133 +1,132 @@
-Summary of Main Changes::::::::::::::
+Summary of Main Changes: 
 
--- need to figure out --
+-- need to figure out �
 
-Current work / To do:::::::::::::::
+
+Current work / To do: 
 1. Rewriting other sections to fit new structure and incorporating additional research.
-2. Lacking at explaning the overall spectrum of agentic RAG.
-3. SHould make clear contribution with proper novelty in the survey paper
-
-Outline:::::::::::::::
-
-Introduction (4 subsections)
-
-Motivation contextualizing the convergence of RAG, graphs, and agents
-
-Problem statement highlighting limitations of traditional RAG
-
-Why Graph-Agentic RAG matters (5 key advantages)
-
-Survey contributions and scope
-
-Background (Comprehensive foundational framework)
-
-RAG Evolution (Traditional → Advanced → Graph → Agentic)
-
-Knowledge Graphs fundamentals
-
-Agentic intelligence patterns
-
-Design patterns (Reflection, Planning, Tool Use, Collaboration)
-
-Taxonomy of Architectures (4 major categories)
-
-Single-Agent: Agent-G system with hybrid retrieval
-
-Multi-Agent: GeAR system with specialized agents
-
-Hierarchical: Coordinator + worker agents
-
-Corrective/Adaptive: Error detection and dynamic strategy selection
-
-Design Patterns & Implementation (5 detailed sections)
-
-Graph construction and maintenance
-
-Query understanding and decomposition
-
-Graph traversal strategies (BFS, Beam Search, RL-based)
-
-LLM-based reasoning with prompting strategies
-
-Hybrid retrieval integration
-
-Representative Systems (3 case studies)
-
-Agent-G: 72% accuracy on HotpotQA (+33% vs. baseline)
-
-GeAR: 76% accuracy on ComplexWebQuestions (+41% improvement)
-
-GraphAgent: 88.2% F1 on node classification
-
-Benchmarking & Evaluation (3 subsections)
-
-Multi-hop QA datasets (HotpotQA, 2WikiMultihopQA, ComplexWebQuestions)
-
-Metrics: EM, F1, ROUGE, hallucination rate, latency
-
-Empirical results table with comparative analysis
-
-Applications (4 domains)
-
-Healthcare (clinical decision support)
-
-Finance (fraud detection, risk assessment)
-
-Legal (contract review, obligation extraction)
-
-Scientific discovery
-
-Evaluation Frameworks
-
-Explainability assessment through path transparency
-
-Human evaluation protocols
-
-Fairness and bias assessment
-
-Future Directions (7 open challenges)
-
-Scalability to billion-scale graphs
-
-Temporal and dynamic reasoning
-
-Privacy-preserving graph reasoning
-
-Differentiable/neuro-symbolic integration
-
-Multi-modal graphs
-
-Explainability improvements
-
-Knowledge verification
+2. Lacking at explaining the overall spectrum of agentic RAG.
+3. Should make clear contribution with proper novelty in the survey paper
 
 
-Deep Analysis of Your Paper
+Outline:
 
-Strengths (Pros)
+1. Introduction (4 subsections)
 
-Comprehensive Scope: Covers agentic multi-hop reasoning, graph-based workflows, and orchestration patterns. Offers taxonomy and deep synthesis of recent empirical and methodological progress.
+* Motivation contextualizing the convergence of RAG, graphs, and agents
 
-Benchmarking: Systematically maps datasets, evaluation protocols, and representative systems. Cites documented multi-hop accuracy improvements over flat RAG approaches.
+* Problem statement highlighting limitations of traditional RAG
 
-Design Patterns: Identifies model-mediated traversal, evaluator-optimizer loops, and hybrid retrieval strategies.
+* Why Graph-Agentic RAG matters (5 key advantages)
 
-Research Agenda: Proposes focused future work addressing scalability, time/temporal graphs, privacy, explainability, differentiable symbolic modules, and federated graph reasoning.
+* Survey contributions and scope
 
-Clear Writing: Abstract and introduction are technically strong and clarify the motivation.
+2. Background (Comprehensive foundational framework)
 
-Relevance: Highly aligned with the state-of-the-art trends in NLP and RAG systems for high-impact knowledge reasoning tasks.
+* RAG Evolution (Traditional ? Advanced ? Graph ? Agentic)
 
-Weaknesses (Cons)
+* Knowledge Graphs fundamentals
 
-Novelty/Contribution: Mostly a survey and consolidation of recent work; may not introduce breakthrough methods or experiments if considered for oral tracks.
+* Agentic intelligence patterns
 
-Experimental Detail: Depth of empirical benchmarking or system comparison is unclear from the abstract—top conferences often require rigorous quantitative evaluation.
+* Design patterns (Reflection, Planning, Tool Use, Collaboration)
 
-Scalability Claims: Scalability to web-scale graphs is identified as future work, but demonstrated solutions may lack.
+3. Taxonomy of Architectures (4 major categories)
 
-Multimodal Handling: Only briefly mentions multimodal and temporal reasoning; full experiments on these fronts would strengthen impact.
+* Single-Agent: Agent-G system with hybrid retrieval
 
-Privacy and Explainability: Points out open problems but may lack concrete frameworks, implementation, or exhaustive privacy analyses.
+* Multi-Agent: GeAR system with specialized agents
 
-References: Needs strong connection to the very latest submissions to stand out at venues where cutting-edge work is prioritized.
+* Hierarchical: Coordinator + worker agents
+
+* Corrective/Adaptive: Error detection and dynamic strategy selection
+
+4. Design Patterns & Implementation 
+
+* Graph construction and maintenance
+
+* Query understanding and decomposition
+
+* Graph traversal strategies (BFS, Beam Search, RL-based)
+
+* LLM-based reasoning with prompting strategies
+
+* Hybrid retrieval integration
+
+5. Representative Systems
+
+* Agent-G: 72% accuracy on HotpotQA (+33% vs. baseline)
+
+* GeAR: 76% accuracy on ComplexWebQuestions (+41% improvement)
+
+* GraphAgent: 88.2% F1 on node classification
+
+6. Benchmarking & Evaluation (3 subsections)
+
+* Multi-hop QA datasets (HotpotQA, 2WikiMultihopQA, ComplexWebQuestions)
+
+* Metrics: EM, F1, ROUGE, hallucination rate, latency
+
+* Empirical results table with comparative analysis
+
+7. Applications (4 domains)
+
+* Healthcare (clinical decision support)
+
+* Finance (fraud detection, risk assessment)
+
+* Legal (contract review, obligation extraction)
+
+* Scientific discovery
+
+8. Evaluation Frameworks
+
+* Explainability assessment through path transparency
+
+* Human evaluation protocols
+
+* Fairness and bias assessment
+
+9. Future Directions 
+
+* Temporal and dynamic reasoning
+
+* Privacy-preserving graph reasoning
+
+* Differentiable/neuro-symbolic integration
+
+* Multi-modal graphs
+
+* Explainability improvements
+
+* Knowledge verification
+
+
+Paper Strengths (Pros)
+
+* Comprehensive Scope: Covers agentic multi-hop reasoning, graph-based workflows, and orchestration patterns. Offers taxonomy and deep synthesis of recent empirical and methodological progress.
+
+* Benchmarking: Systematically maps datasets, evaluation protocols, and representative systems. Cites documented multi-hop accuracy improvements over flat RAG approaches.
+
+* Design Patterns: Identifies model-mediated traversal, evaluator-optimizer loops, and hybrid retrieval strategies.
+
+* Research Agenda: Proposes focused future work addressing scalability, time/temporal graphs, privacy, explainability, differentiable symbolic modules, and federated graph reasoning.
+
+* Clear Writing: Abstract and introduction are technically strong and clarify the motivation.
+
+* Relevance: Highly aligned with the state-of-the-art trends in NLP and RAG systems for high-impact knowledge reasoning tasks.
+
+Paper Weaknesses (Cons)
+
+* Novelty/Contribution: Mostly a survey and consolidation of recent work; may not introduce breakthrough methods or experiments if considered for oral tracks.
+
+* Experimental Detail: Depth of empirical benchmarking or system comparison is unclear from the abstract. 
+
+* Scalability Claims: Scalability to web-scale graphs is identified as future work, but demonstrated solutions may lack.
+
+* Multimodal Handling: Only briefly mentions multimodal and temporal reasoning; full experiments on these fronts would strengthen impact.
+
+* Privacy and Explainability: Points out open problems but may lack concrete frameworks, implementation, or exhaustive privacy analyses.
+
+* References: Needs strong connection to the very latest submissions to stand out at venues where cutting-edge work is prioritized.
+
