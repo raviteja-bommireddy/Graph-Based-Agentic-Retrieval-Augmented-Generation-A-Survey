@@ -1,132 +1,85 @@
-Summary of Main Changes: 
-
--- need to figure out �
-
-
-Current work / To do: 
-1. Rewriting other sections to fit new structure and incorporating additional research.
-2. Lacking at explaining the overall spectrum of agentic RAG.
-3. Should make clear contribution with proper novelty in the survey paper
-
-
-Outline:
-
-1. Introduction (4 subsections)
-
-* Motivation contextualizing the convergence of RAG, graphs, and agents
-
-* Problem statement highlighting limitations of traditional RAG
-
-* Why Graph-Agentic RAG matters (5 key advantages)
-
-* Survey contributions and scope
-
-2. Background (Comprehensive foundational framework)
-
-* RAG Evolution (Traditional ? Advanced ? Graph ? Agentic)
-
-* Knowledge Graphs fundamentals
-
-* Agentic intelligence patterns
-
-* Design patterns (Reflection, Planning, Tool Use, Collaboration)
-
-3. Taxonomy of Architectures (4 major categories)
-
-* Single-Agent: Agent-G system with hybrid retrieval
-
-* Multi-Agent: GeAR system with specialized agents
-
-* Hierarchical: Coordinator + worker agents
-
-* Corrective/Adaptive: Error detection and dynamic strategy selection
-
-4. Design Patterns & Implementation 
-
-* Graph construction and maintenance
-
-* Query understanding and decomposition
-
-* Graph traversal strategies (BFS, Beam Search, RL-based)
-
-* LLM-based reasoning with prompting strategies
-
-* Hybrid retrieval integration
-
-5. Representative Systems
-
-* Agent-G: 72% accuracy on HotpotQA (+33% vs. baseline)
-
-* GeAR: 76% accuracy on ComplexWebQuestions (+41% improvement)
-
-* GraphAgent: 88.2% F1 on node classification
-
-6. Benchmarking & Evaluation (3 subsections)
-
-* Multi-hop QA datasets (HotpotQA, 2WikiMultihopQA, ComplexWebQuestions)
-
-* Metrics: EM, F1, ROUGE, hallucination rate, latency
-
-* Empirical results table with comparative analysis
-
-7. Applications (4 domains)
-
-* Healthcare (clinical decision support)
-
-* Finance (fraud detection, risk assessment)
-
-* Legal (contract review, obligation extraction)
-
-* Scientific discovery
-
-8. Evaluation Frameworks
-
-* Explainability assessment through path transparency
-
-* Human evaluation protocols
-
-* Fairness and bias assessment
-
-9. Future Directions 
-
-* Temporal and dynamic reasoning
-
-* Privacy-preserving graph reasoning
-
-* Differentiable/neuro-symbolic integration
-
-* Multi-modal graphs
-
-* Explainability improvements
-
-* Knowledge verification
-
-
-Paper Strengths (Pros)
-
-* Comprehensive Scope: Covers agentic multi-hop reasoning, graph-based workflows, and orchestration patterns. Offers taxonomy and deep synthesis of recent empirical and methodological progress.
-
-* Benchmarking: Systematically maps datasets, evaluation protocols, and representative systems. Cites documented multi-hop accuracy improvements over flat RAG approaches.
-
-* Design Patterns: Identifies model-mediated traversal, evaluator-optimizer loops, and hybrid retrieval strategies.
-
-* Research Agenda: Proposes focused future work addressing scalability, time/temporal graphs, privacy, explainability, differentiable symbolic modules, and federated graph reasoning.
-
-* Clear Writing: Abstract and introduction are technically strong and clarify the motivation.
-
-* Relevance: Highly aligned with the state-of-the-art trends in NLP and RAG systems for high-impact knowledge reasoning tasks.
-
-Paper Weaknesses (Cons)
-
-* Novelty/Contribution: Mostly a survey and consolidation of recent work; may not introduce breakthrough methods or experiments if considered for oral tracks.
-
-* Experimental Detail: Depth of empirical benchmarking or system comparison is unclear from the abstract. 
-
-* Scalability Claims: Scalability to web-scale graphs is identified as future work, but demonstrated solutions may lack.
-
-* Multimodal Handling: Only briefly mentions multimodal and temporal reasoning; full experiments on these fronts would strengthen impact.
-
-* Privacy and Explainability: Points out open problems but may lack concrete frameworks, implementation, or exhaustive privacy analyses.
-
-* References: Needs strong connection to the very latest submissions to stand out at venues where cutting-edge work is prioritized.
+﻿Summary of Main Changes
+• Refined the Taxonomy Structure: The original draft likely mixed "Graph RAG" (static retrieval) with "Agentic RAG" (dynamic reasoning). I have restructured the taxonomy to explicitly distinguish between Agentic workflows operating on Graphs (Navigation) and Agents constructing Graphs (Dynamic Knowledge).
+• Clarified the "Agentic" Dimension: Moved general RAG definitions to the background and focused the core analysis on autonomy: how agents plan, decompose, and reflect using graph structures.
+• Unified "Methods" Section: Grouped scattered methods into a cohesive "Architecture & Workflows" section, categorized by the role of the agent (e.g., Construction vs. Retrieval vs. Reasoning).
+• Expanded Evaluation: Added specific subsections for evaluating the agentic aspect (e.g., reasoning path validity, tool-use accuracy) separate from standard retrieval metrics.
+Current work / To do
+• Standardize Terminology: Ensure terms like "Reasoning Paths," "Orchestration," and "Sub-graph retrieval" are defined in Section 3 and used consistently throughout.
+• Complete Section 4 (Methodologies): Flesh out the sub-sub-sections for "Orchestration Patterns" to ensure single-agent vs. multi-agent distinctions are clearly written again.
+• Goal: Finalize the "Taxonomy of GA-RAG" (Section 3) and "Methodologies" (Section 4) to match the new hierarchical outline below.
+
+
+Outline
+
+1. Introduction
+
+2. Overview of Taxonomy
+
+3. Background
+    3.1. Evolution of RAG
+        3.1.1. Naïve RAG vs Modular RAG
+        3.1.2. The shift to Graph-based approaches
+    3.2. Fundamentals of Graph-Based Agentic RAG (GA-RAG)
+        3.2.1. Definition and Core Paradigm
+        3.2.2. The Synergy: Why Graphs need Agents (and vice versa)
+        3.2.3. Key Components
+            3.2.3.1. The Controller (Agent / LLM)
+            3.2.3.2. The Structure (Knowledge Graph)
+            3.2.3.3. The Tools (Retrievers, Reasoners)
+
+4. Taxonomies of GA-RAG Systems
+    4.1. By Integration Paradigm
+        4.1.1. Graph-Augmented Agents — Agents use static graphs as a fixed tool for lookups to ground their reasoning.
+        4.1.2. Graph-Centric Agents — The agent "lives" on the graph, navigating node-to-node (walking) to solve problems.
+        4.1.3. Agent-Constructed Graphs — Agents actively build or modify the graph structure during the conversation to store memory.
+    4.2. By Orchestration Architecture
+        4.2.1. Single-Agent Frameworks — A single LLM orchestrator managing graph tools.
+            4.2.1.1. ReAct on Graphs
+            4.2.1.2. Chain-of-Thought (CoT) with Graph Paths
+        4.2.2. Multi-Agent Systems (MAS) — Specialized agents (e.g., a "Retriever," a "Critic," a "Generator") collaborating over a shared graph.
+            4.2.2.1. Hierarchical Teams (Manager-Worker)
+            4.2.2.2. Cooperative / Debating Agents
+
+5. Methodologies and Workflows
+    5.1. Knowledge Engineering & Construction
+        5.1.1. Dynamic Graph Construction — Agents extracting entities/relations on the fly from retrieved docs.
+        5.1.2. Graph Indexing Strategies
+            5.1.2.1. Text-to-Graph alignment
+            5.1.2.2. Community detection (Global summary)
+    5.2. Retrieval & Navigation Mechanisms
+        5.2.1. Exploratory Traversal — Agents deciding "where to step next" based on current node context.
+            5.2.1.1. Beam Search & Lookahead
+            5.2.1.2. Reinforcement Learning on Graphs
+        5.2.2. Subgraph Extraction — Identifying and pulling relevant clusters for context.
+            5.2.2.1. k-Hop Neighborhoods
+            5.2.2.2. Path-based Reasoning
+    5.3. Reasoning & Generation
+        5.3.1. Iterative Refinement — Agent critiques the retrieved graph-context and re-queries if necessary.
+        5.3.2. Structure-aware Generation — Encoding graph topology (triplets) into the LLM prompt.
+
+6. Evaluating GA-RAG
+    6.1. Retrieval Performance
+        6.1.1. Precision/Recall of Nodes & Edges
+        6.1.2. Multi-hop retrieval accuracy
+    6.2. Agentic Performance
+        6.2.1. Planning Efficiency (Number of steps to solution)
+        6.2.2. Tool Use Accuracy (Did it query the graph correctly?)
+        6.2.3. Faithfulness to Graph Structure (Avoiding structural hallucinations)
+    6.3. Benchmarks & Datasets
+        6.3.1. Complex QA Datasets (e.g., MultiHop-RAG, GraphQA)
+        6.3.2. Domain-Specific Benchmarks (Medical, Legal)
+
+7. Applications
+    7.1. Complex Question Answering
+    7.2. Scientific Discovery & Literature Review
+    7.3. Personalized Recommendation Systems
+    7.4. Enterprise Knowledge Management
+
+8. Challenges and Future Directions
+    8.1. Scalability — Handling massive graphs with agentic latency.
+    8.2. Dynamic Updates — Keeping the graph effectively synced with real-time data.
+    8.3. Error Propagation — Managing "cascading errors" when an agent takes a wrong turn in the graph.
+    8.4. Interpretability — Visualizing the agent's "thought path" through the graph.
+
+9. Conclusion
 
